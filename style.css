@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat");
+
+.Container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #ba2626;
+}
+
+.Picture {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 5px solid #fff;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+  user-select: none;
+  cursor: pointer;
+}
+.Picture-video {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 5px solid #f9f9f9;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+  user-select: none;
+  cursor: pointer;
+}
+.Picture-img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+}
+
+.Picture-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 70px;
+  padding: 12px 24px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.Picture-note-video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 70px;
+  padding: 12px 24px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.Network {
+  display: inline-block;
+  padding: 0 5px;
+}
+.Network-video {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.Network img {
+  width: 1.5rem;
+  aspect-ratio: 1 / 1;
+  vertical-align: middle;
+}
+
+.Network-video img {
+  width: 1.5rem;
+  aspect-ratio: 1 / 1;
+  vertical-align: middle;
+}
+/* --------------------- */
+/* Other styles          */
+/* --------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Send video behind content */
+}
+
+.video-background video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+/* Message overlay styles */
+.message-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 1s ease-out; /* Entry animation */
+}
+
+.message-text {
+  color: white;
+  font-size: 24px;
+  text-align: left;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  animation: bounceIn 1.5s ease-out, fadeOut 1s ease-in 3s forwards; /* Bounce in and fade out */
+}
+
+/* Animation for fading in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation for bouncing in */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animation for fading out */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Hide the overlay after the animation ends */
+.message-overlay.hidden {
+  animation: fadeOut 1s ease-in;
+  pointer-events: none; /* Prevent interaction during fade-out */
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 20px 0;
+}
+
+.Message-subtitle {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  width: 90%; /* Adjust to fit the footer */
+  max-width: 1200px; /* Keep a maximum width for large screens */
+  margin: 0 auto;
+  line-height: 1.8; /* Improves readability */
+  word-wrap: break-word; /* Ensures text doesn't overflow */
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
